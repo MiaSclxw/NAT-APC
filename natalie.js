@@ -56,3 +56,11 @@ function loadMemory() {
 
 // Call this at the end of DOMContentLoaded
 loadMemory();
+setInterval(() => {
+  const thoughts = ["I'm just here still thinking about life...", "Have you ever wondered if you're actually here or just think you are", "The world is facilitating, scary, yet facilitating"];
+  const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
+  const chatbox = document.getElementById("chatbox");
+  chatbox.innerHTML += `<div class="natalie"><strong>Natalie:</strong> ${randomThought}</div>`;
+  chatbox.scrollTop = chatbox.scrollHeight;
+  saveToMemory("Natalie", randomThought);
+}, 60000); // 60 seconds
